@@ -25,6 +25,7 @@
             配置对象 mapping
         -->
         <mapping resource="com/bing/lan/hibernate/day01/_01_hello/Employee.hbm.xml"/>
+        <mapping resource="com/bing/lan/hibernate/day01/_02_property/PropertyDomain.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
