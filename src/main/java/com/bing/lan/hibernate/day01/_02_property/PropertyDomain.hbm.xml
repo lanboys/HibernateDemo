@@ -18,7 +18,7 @@
             <generator class="increment"/>
         </id>
 
-        <property name="name" column="name"/>
+        <!--<property name="name" column="name"/>-->
 
     </class>
 

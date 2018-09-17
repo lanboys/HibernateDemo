@@ -22,6 +22,21 @@
         <property name="show_sql">true</property>
 
         <!--
+
+        -->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <!-- 生成表 和 检测表 策略
+         create-drop 和 create 区别: 前者退出时自动删除所有表，前提是 SessionFactory 要正常关闭
+
+            （1）create 启动时删数据库中的表，然后创建，退出时不删除数据表
+            （2）create-drop，启动时删数据库中的表，然后创建，退出时自动删除所有表
+            （3）update ，如果表结构与实体类不一致，那么就修改表使它们一致，数据会保留。
+            （4）validate，自动检验，如果表结构与实体类不一致，那么不做任何操作，报错
+         -->
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <!--
             配置对象 mapping
         -->
         <mapping resource="com/bing/lan/hibernate/day01/_01_hello/Employee.hbm.xml"/>

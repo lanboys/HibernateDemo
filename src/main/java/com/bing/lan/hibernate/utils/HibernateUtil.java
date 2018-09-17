@@ -26,4 +26,10 @@ public class HibernateUtil {
     public Session openSession() {
         return sessionFactory.openSession();
     }
+
+    public void closeSessionFactory() {
+        if (sessionFactory != null && sessionFactory.isOpen()) {
+            sessionFactory.close();
+        }
+    }
 }
