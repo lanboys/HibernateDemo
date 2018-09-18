@@ -1,16 +1,7 @@
 package com.bing.lan.hibernate.day01._01_hello;
 
-import java.util.List;
+import com.bing.lan.hibernate.utils.IObjectDAO;
 
-interface IEmployeeDAO {
+interface IEmployeeDAO extends IObjectDAO<Employee> {
 
-    void save(Employee employee);
-
-    Employee get(Long id);
-
-    void update(Employee employee);
-
-    void delete(Long id);
-
-    List<Employee> list();
 }

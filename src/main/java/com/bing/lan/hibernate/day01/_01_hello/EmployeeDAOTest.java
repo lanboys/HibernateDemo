@@ -1,11 +1,13 @@
 package com.bing.lan.hibernate.day01._01_hello;
 
+import com.bing.lan.hibernate.utils.IDAOTest;
+
 import org.junit.Test;
 
 import java.util.Date;
 import java.util.List;
 
-public class EmployeeDAOTest {
+public class EmployeeDAOTest implements IDAOTest {
 
     private IEmployeeDAO dao;
 
