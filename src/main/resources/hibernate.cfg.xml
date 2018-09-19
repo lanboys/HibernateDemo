@@ -27,6 +27,7 @@
         <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
         <!-- 生成表 和 检测表 策略
+
          create-drop 和 create 区别: 前者退出时自动删除所有表，前提是 SessionFactory 要正常关闭
 
             （1）create 启动时删数据库中的表，然后创建，退出时不删除数据表
@@ -43,6 +44,8 @@
         <mapping resource="com/bing/lan/hibernate/day02/_02_session/SessionDomain.hbm.xml"/>
         -->
 
-        <mapping resource="com/bing/lan/hibernate/day02/_03_many2one/Employee.hbm.xml"/>
+        <!--<mapping resource="com/bing/lan/hibernate/day02/_03_many2one/Employee.hbm.xml"/>-->
+        <mapping resource="com/bing/lan/hibernate/day02/_04_one2many/Employee.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>

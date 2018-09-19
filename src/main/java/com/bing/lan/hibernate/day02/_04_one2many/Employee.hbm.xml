@@ -4,15 +4,22 @@
     '-//Hibernate/Hibernate Mapping DTD 3.0//EN'
     'http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd'>
 
-<hibernate-mapping package="com.bing.lan.hibernate.day02._03_many2one">
+<hibernate-mapping package="com.bing.lan.hibernate.day02._04_one2many">
+
 
 
     <class name="Department" table="department">
         <!-- 映射主键  -->
         <id name="id" type="long" column="id">
-            <generator class="increment"/>
+            <generator class="native"/>
         </id>
         <property name="name" column="name"/>
+         <set name="emps">
+             <key column="dept_id"></key>
+             <one-to-many class="Employee"/>
+         </set>
+
+
     </class>
 
 
@@ -20,12 +27,12 @@
 
         <!-- 映射主键  -->
         <id name="id" type="long" column="id">
-            <generator class="increment"/>
+            <generator class="native"/>
         </id>
 
         <property name="name" column="name"/>
 
-        <many-to-one name="department" column="depart_id"/>
+
     </class>
 
 
