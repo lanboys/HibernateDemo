@@ -45,7 +45,7 @@
         -->
 
         <!--<mapping resource="com/bing/lan/hibernate/day02/_03_many2one/Employee.hbm.xml"/>-->
-        <mapping resource="com/bing/lan/hibernate/day02/_04_one2many/Employee.hbm.xml"/>
+        <mapping resource="com/bing/lan/hibernate/day02/_05_many2one2many/Many2One2Many.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

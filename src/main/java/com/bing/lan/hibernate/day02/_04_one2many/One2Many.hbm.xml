@@ -6,22 +6,17 @@
 
 <hibernate-mapping package="com.bing.lan.hibernate.day02._04_one2many">
 
-
-
     <class name="Department" table="department">
         <!-- 映射主键  -->
         <id name="id" type="long" column="id">
             <generator class="native"/>
         </id>
         <property name="name" column="name"/>
-         <set name="emps">
-             <key column="dept_id"></key>
-             <one-to-many class="Employee"/>
-         </set>
-
-
+        <set name="emps">
+            <key column="dept_id"></key>
+            <one-to-many class="Employee"/>
+        </set>
     </class>
-
 
     <class name="Employee" table="employee">
 
@@ -29,11 +24,7 @@
         <id name="id" type="long" column="id">
             <generator class="native"/>
         </id>
-
         <property name="name" column="name"/>
-
-
     </class>
-
 
 </hibernate-mapping>
