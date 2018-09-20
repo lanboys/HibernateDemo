@@ -35,7 +35,7 @@
             （3）update ，如果表结构与实体类不一致，那么就修改表使它们一致，数据会保留。
             （4）validate，自动检验，如果表结构与实体类不一致，那么不做任何操作，报错
          -->
-        <property name="hbm2ddl.auto">create-drop</property>
+        <!--<property name="hbm2ddl.auto">create-drop</property>-->
 
         <!--
             配置对象 mapping
@@ -45,7 +45,8 @@
         -->
 
         <!--<mapping resource="com/bing/lan/hibernate/day02/_03_many2one/Employee.hbm.xml"/>-->
-        <mapping resource="com/bing/lan/hibernate/day02/_05_many2one2many/Many2One2Many.hbm.xml"/>
+        <!--<mapping resource="com/bing/lan/hibernate/day02/_05_many2one2many/Many2One2Many.hbm.xml"/>-->
+        <mapping resource="com/bing/lan/hibernate/day03/_01_collection/Collection.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
