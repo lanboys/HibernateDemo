@@ -49,7 +49,8 @@
         <!--<mapping resource="com/bing/lan/hibernate/day03/_01_collection/Collection.hbm.xml"/>-->
         <!--<mapping resource="com/bing/lan/hibernate/day03/_02_cascade/Cascade.hbm.xml"/>-->
         <!--<mapping resource="com/bing/lan/hibernate/day03/_03_one2one/One2one.hbm.xml"/>-->
-        <mapping resource="com/bing/lan/hibernate/day03/_04_component/Component.hbm.xml"/>
+        <!--<mapping resource="com/bing/lan/hibernate/day03/_04_component/Component.hbm.xml"/>-->
+        <mapping resource="com/bing/lan/hibernate/day03/_05_many2many/Many2Many.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

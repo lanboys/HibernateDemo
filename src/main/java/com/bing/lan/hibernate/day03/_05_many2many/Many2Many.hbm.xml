@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    '-//Hibernate/Hibernate Mapping DTD 3.0//EN'
+    'http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd'>
+
+<hibernate-mapping package="com.bing.lan.hibernate.day03._05_many2many">
+
+    <class name="Teacher">
+        <!-- 映射主键  -->
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name"/>
+        <set name="students" table="stu_tea">
+            <key column="teacher_id"/>
+            <many-to-many class="Student" column="student_id"/>
+        </set>
+    </class>
+
+    <class name="Student">
+        <!-- 映射主键  -->
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name"/>
+        <set name="teachers" table="stu_tea" inverse="true">
+            <key column="student_id"/>
+            <many-to-many class="Teacher" column="teacher_id"/>
+        </set>
+    </class>
+
+
+</hibernate-mapping>
