@@ -1,4 +1,4 @@
-package com.bing.lan.hibernate.day02._03_many2one;
+package com.bing.lan.hibernate.day02._03_many2one._02;
 
 public class Employee {
 

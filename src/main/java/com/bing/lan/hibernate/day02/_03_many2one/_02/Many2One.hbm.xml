@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    '-//Hibernate/Hibernate Mapping DTD 3.0//EN'
+    'http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd'>
+
+<hibernate-mapping package="com.bing.lan.hibernate.day02._03_many2one._02">
+
+
+    <class name="Department" table="department">
+        <!-- 映射主键  -->
+        <id name="id" type="long" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name"/>
+    </class>
+
+    <!-- 使用连接表 -->
+    <class name="Employee" table="employee">
+
+        <!-- 映射主键  -->
+        <id name="id" type="long" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="name"/>
+
+        <!-- 有些属性 是用 hibernate创建表时用的，如果自己设计表有时候并不能达到想要的效果 -->
+        <!--
+                比如：如果由hibernate创建表的话，中间表中 employee_id 为唯一主键，此时employee_id
+                列只有一个可以保证many2one关系，假设 增加一个字段 id 作为主键，取消employee_id主键，
+                那么employee_id可以有两个, 此时成了many2many关系，hibernate并不抛异常，在通过
+                Employee.class get()方法进行查询的话，获取的department 还是一个，实际上可能是两个
+        -->
+
+        <join table="department_employee" optional="true">
+            <key column="employee_id" unique="true"/>
+            <many-to-one name="department" column="depart_id"/>
+        </join>
+    </class>
+
+
+</hibernate-mapping>

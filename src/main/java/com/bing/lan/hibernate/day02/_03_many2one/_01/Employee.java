@@ -1,13 +1,18 @@
-package com.bing.lan.hibernate.day02._03_many2one;
+package com.bing.lan.hibernate.day02._03_many2one._01;
 
-/**
- * Created by 蓝兵 on 2018/9/19.
- */
-
-public class Department {
+public class Employee {
 
     private Long id;
     private String name;
+    private Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public Long getId() {
         return id;
@@ -27,7 +32,7 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Department{" +
+        return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

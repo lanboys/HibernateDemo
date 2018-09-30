@@ -1,4 +1,4 @@
-package com.bing.lan.hibernate.day02._03_many2one;
+package com.bing.lan.hibernate.day02._03_many2one._02;
 
 import com.bing.lan.hibernate.utils.HibernateUtil;
 import com.bing.lan.hibernate.utils.IDAOTest;
@@ -40,7 +40,7 @@ public class Many2OneTest implements IDAOTest {
         Session session = HibernateUtil.getInstance().openSession();
         session.beginTransaction();
 
-        Employee employee = session.get(Employee.class, 1l);
+        Employee employee = session.get(Employee.class, 8l);
         Department department = employee.getDepartment();
         System.out.println("testGet(): " + department);
 

@@ -1,19 +1,18 @@
-package com.bing.lan.hibernate.day03._03_one2one;
+package com.bing.lan.hibernate.day03._03_one2one._02;
 
 import com.bing.lan.hibernate.utils.HibernateUtil;
 import com.bing.lan.hibernate.utils.IDAOTest;
 
 import org.hibernate.Session;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by 蓝兵 on 2018/9/25.
  */
 
-public class One2oneTest implements IDAOTest {
+public class One2OneTest implements IDAOTest {
 
-    @Before
+    @Test
     public void testSave() {
         QQNumber qqNumber = new QQNumber();
         qqNumber.setQq("1069");
@@ -22,12 +21,11 @@ public class One2oneTest implements IDAOTest {
         qqZone.setTitle("title");
 
         qqNumber.setZone(qqZone);
-        qqZone.setQqnumber(qqNumber);
 
         Session session = HibernateUtil.getInstance().openSession();
         session.beginTransaction();
 
-        session.save(qqZone);
+        //session.save(qqZone);
         session.save(qqNumber);
 
         session.getTransaction().commit();
@@ -39,7 +37,7 @@ public class One2oneTest implements IDAOTest {
         Session session = HibernateUtil.getInstance().openSession();
         session.beginTransaction();
 
-        QQNumber qqNumber = session.get(QQNumber.class, 1l);
+        QQNumber qqNumber = session.get(QQNumber.class, 3l);
         QQZone zone = qqNumber.getZone();
         System.out.println("testGet(): " + zone);
 
@@ -52,8 +50,8 @@ public class One2oneTest implements IDAOTest {
         session.beginTransaction();
 
         QQZone qqZone = session.get(QQZone.class, 1l);
-        QQNumber qqNumber = qqZone.getQqnumber();
-        System.out.println("testGet2(): " + qqNumber);
+        //QQNumber qqNumber = qqZone.getQqnumber();
+        //System.out.println("testGet2(): " + qqNumber);
 
         session.getTransaction().commit();
         session.close();

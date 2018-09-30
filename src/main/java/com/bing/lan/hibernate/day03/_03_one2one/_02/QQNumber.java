@@ -1,4 +1,4 @@
-package com.bing.lan.hibernate.day03._03_one2one;
+package com.bing.lan.hibernate.day03._03_one2one._02;
 
 /**
  * Created by 蓝兵 on 2018/9/25.
